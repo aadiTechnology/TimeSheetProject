@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TimeSheetModelStoreContainer" CdmEntityContainer="TimeSheetMangementEntities">
+    <EntitySetMapping Name="ClientDetails">
+      <EntityTypeMapping TypeName="TimeSheetModel.ClientDetail">
+        <MappingFragment StoreEntitySet="ClientDetails">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company_Master">
+      <EntityTypeMapping TypeName="TimeSheetModel.Company_Master">
+        <MappingFragment StoreEntitySet="Company_Master">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeDetails">
+      <EntityTypeMapping TypeName="TimeSheetModel.EmployeeDetail">
+        <MappingFragment StoreEntitySet="EmployeeDetails">
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Module_Details">
+      <EntityTypeMapping TypeName="TimeSheetModel.Module_Details">
+        <MappingFragment StoreEntitySet="Module_Details">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Modules" ColumnName="Modules" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Details">
+      <EntityTypeMapping TypeName="TimeSheetModel.Project_Details">
+        <MappingFragment StoreEntitySet="Project_Details">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskDeatils">
+      <EntityTypeMapping TypeName="TimeSheetModel.TaskDeatil">
+        <MappingFragment StoreEntitySet="TaskDeatils">
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="PlannedEfforts" ColumnName="PlannedEfforts" />
+          <ScalarProperty Name="PlannedEndDate" ColumnName="PlannedEndDate" />
+          <ScalarProperty Name="PlannedStartDate" ColumnName="PlannedStartDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activity_Type">
+      <EntityTypeMapping TypeName="TimeSheetModel.Activity_Type">
+        <MappingFragment StoreEntitySet="Activity_Type">
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeSheetsDetails">
+      <EntityTypeMapping TypeName="TimeSheetModel.TimeSheetsDetail">
+        <MappingFragment StoreEntitySet="TimeSheetsDetails">
+          <ScalarProperty Name="ActId" ColumnName="ActId" />
+          <ScalarProperty Name="ActivityComment" ColumnName="ActivityComment" />
+          <ScalarProperty Name="ProductiveHrs" ColumnName="ProductiveHrs" />
+          <ScalarProperty Name="Efforts" ColumnName="Efforts" />
+          <ScalarProperty Name="ActualEndDate" ColumnName="ActualEndDate" />
+          <ScalarProperty Name="ActualStartDate" ColumnName="ActualStartDate" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

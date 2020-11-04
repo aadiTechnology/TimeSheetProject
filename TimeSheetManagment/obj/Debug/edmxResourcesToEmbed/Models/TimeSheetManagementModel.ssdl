@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TimeSheetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Activity_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Activity" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ClientDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientName" Type="nvarchar" MaxLength="200" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Company_Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="EmployeeDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Module_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Modules" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProjectId" Type="int" />
+  </EntityType>
+  <EntityType Name="Project_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ClientId" Type="int" />
+  </EntityType>
+  <EntityType Name="TaskDeatils">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaskName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PlannedStartDate" Type="date" />
+    <Property Name="PlannedEndDate" Type="date" />
+    <Property Name="PlannedEfforts" Type="int" />
+    <Property Name="ModuleId" Type="int" />
+  </EntityType>
+  <EntityType Name="TimeSheetsDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="TaskId" Type="int" />
+    <Property Name="ActualStartDate" Type="date" />
+    <Property Name="ActualEndDate" Type="date" />
+    <Property Name="Efforts" Type="int" />
+    <Property Name="ProductiveHrs" Type="int" />
+    <Property Name="ActivityComment" Type="nvarchar" MaxLength="500" />
+    <Property Name="ActId" Type="int" />
+  </EntityType>
+  <EntityContainer Name="TimeSheetModelStoreContainer">
+    <EntitySet Name="Activity_Type" EntityType="Self.Activity_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientDetails" EntityType="Self.ClientDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_Master" EntityType="Self.Company_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Module_Details" EntityType="Self.Module_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_Details" EntityType="Self.Project_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskDeatils" EntityType="Self.TaskDeatils" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeSheetsDetails" EntityType="Self.TimeSheetsDetails" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

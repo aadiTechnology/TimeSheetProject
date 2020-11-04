@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TimeSheetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TimeSheetMangementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ClientDetails" EntityType="TimeSheetModel.ClientDetail" />
+    <EntitySet Name="Company_Master" EntityType="TimeSheetModel.Company_Master" />
+    <EntitySet Name="EmployeeDetails" EntityType="TimeSheetModel.EmployeeDetail" />
+    <EntitySet Name="Module_Details" EntityType="TimeSheetModel.Module_Details" />
+    <EntitySet Name="Project_Details" EntityType="TimeSheetModel.Project_Details" />
+    <EntitySet Name="TaskDeatils" EntityType="TimeSheetModel.TaskDeatil" />
+    <EntitySet Name="Activity_Type" EntityType="TimeSheetModel.Activity_Type" />
+    <EntitySet Name="TimeSheetsDetails" EntityType="TimeSheetModel.TimeSheetsDetail" />
+  </EntityContainer>
+  <EntityType Name="ClientDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Company_Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EmployeeDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Designation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Module_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Modules" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Project_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ClientId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TaskDeatil">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaskName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PlannedStartDate" Type="DateTime" Precision="0" />
+    <Property Name="PlannedEndDate" Type="DateTime" Precision="0" />
+    <Property Name="PlannedEfforts" Type="Int32" />
+    <Property Name="ModuleId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Activity_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Activity" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TimeSheetsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="TaskId" Type="Int32" />
+    <Property Name="ActualStartDate" Type="DateTime" Precision="0" />
+    <Property Name="ActualEndDate" Type="DateTime" Precision="0" />
+    <Property Name="Efforts" Type="Int32" />
+    <Property Name="ProductiveHrs" Type="Int32" />
+    <Property Name="ActivityComment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ActId" Type="Int32" />
+  </EntityType>
+</Schema>
