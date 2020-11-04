@@ -22,7 +22,7 @@ namespace TimeSheetManagment.Models
         public int Id { get; set; }
         [Display(Name ="Task Name :")]
         public string TaskName { get; set; }
-        [Display(Name = "Description :")]
+        [Display(Name = "Task Description :")]
         public string Description { get; set; }
         [Display(Name = "Planned Start Date :")]
         public DateTime PlannedStartDate { get; set; }

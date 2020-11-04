@@ -110,16 +110,19 @@
                         <td class="col-md-3" style="padding:10px !important;">
                             @Html.DropDownListFor(model => model.ActId, ViewBag.Activity as SelectList, "--Select Activity--", new { @class = "form-control", @id = "ddlActivity" })
                         </td>
-                        <td class="col-md-2" style="padding:10px !important;">
-                            @Html.LabelFor(model => model.ActivityComment, new { @class = "manadatory" })
-                        </td>
-                        <td class="col-md-3" style="padding:15px !important;">
-                            @Html.TextBoxFor(model => model.ActivityComment, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.ActivityComment, "", new { @class = "text-danger" })
-                        </td>
                         <td colspan="2">
                         </td>
                     </tr>
+                    <tr>
+                        <td class="col-md-2" style="padding:10px !important;">
+                            @Html.LabelFor(model => model.ActivityComment, new { @class = "manadatory" })
+                        </td>
+                        <td class="col-md-3" colspan="4" style="padding:15px !important;">
+                            @Html.TextAreaFor(model => model.ActivityComment, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ActivityComment, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    
                 </table> }
             <br />
             <div class="row">

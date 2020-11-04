@@ -21,87 +21,84 @@
 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" }) if (ViewBag.Company != null)
                 {
-<table width="100%">
-    <tr>
-        <td class="col-md-2" style="padding:10px !important;">
-            @Html.LabelFor(a => a.CompanyName, new { @class = "manadatory" })
-        </td>
-        <td class="col-md-3" style="padding:10px !important;">
+        <table width="100%">
+            <tr>
+                <td class="col-md-2" style="padding:10px !important;">
+                    @Html.LabelFor(a => a.CompanyName, new { @class = "manadatory" })
+                </td>
+                <td class="col-md-3" style="padding:10px !important;">
 
 
-            @Html.DropDownListFor(model => model.CompanyId, ViewBag.Company as SelectList, "--Select Company--", new { @class = "form-control", @id = "ddlCompany" })
+                    @Html.DropDownListFor(model => model.CompanyId, ViewBag.Company as SelectList, "--Select Company--", new { @class = "form-control", @id = "ddlCompany" })
 
-        </td>
-        <td class="col-md-2" style="padding:10px !important;">
-            @Html.LabelFor(model => model.ClientName, new { @class = "manadatory" })
-        </td>
-        <td class="col-md-3" style="padding:10px !important;">
-            @Html.DropDownListFor(x => x.ClientId, new SelectList(" "), "--Select Client--", new { @class = "form-control", @id = "ddlClient" })
-            @Html.ValidationMessageFor(a => a.ClientId)
-        </td>
-    </tr>
-    <tr>
-        <td class="col-md-2" style="padding:10px !important;">
-            @Html.LabelFor(model => model.ProjectName, new { @class = "manadatory" })
-        </td>
-        <td class="col-md-3" style="padding:10px !important;">
-            @Html.DropDownListFor(x => x.ProjectId, new SelectList(" "), "--Select Project--", new { @class = "form-control", @id = "ddlProject" })
-            @Html.ValidationMessageFor(a => a.ProjectId)
-        </td>
-        <td class="col-md-2" style="padding:10px !important;">
-            @Html.LabelFor(model => model.Modules, new { @class = "manadatory" })
-        </td>
-        <td class="col-md-3" style="padding:10px !important;">
-            @Html.DropDownListFor(x => x.ModuleId, new SelectList(" "), "--Select Module--", new { @class = "form-control", @id = "ddlModule" })
-            @Html.ValidationMessageFor(a => a.ModuleId)
-        </td>
-    </tr>
-    <tr>
-        <td class="col-md-2" style="padding:10px !important;">
-            @Html.LabelFor(model => model.TaskName, new { @class = "manadatory" })
-        </td>
-        <td class="col-md-3" style="padding:10px !important;">
-            @Html.TextBoxFor(model => model.TaskName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.TaskName, "", new { @class = "text-danger" })
-        </td>
-        <td class="col-md-2" style="padding:10px !important;">
-            @Html.LabelFor(model => model.Description, new { @class = "manadatory" })
-        </td>
-        <td class="col-md-3" style="padding:10px !important;">
-            @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-        </td>
-    </tr>
+                </td>
+                <td class="col-md-2" style="padding:10px !important;">
+                    @Html.LabelFor(model => model.ClientName, new { @class = "manadatory" })
+                </td>
+                <td class="col-md-3" style="padding:10px !important;">
+                    @Html.DropDownListFor(x => x.ClientId, new SelectList(" "), "--Select Client--", new { @class = "form-control", @id = "ddlClient" })
+                    @Html.ValidationMessageFor(a => a.ClientId)
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-2" style="padding:10px !important;">
+                    @Html.LabelFor(model => model.ProjectName, new { @class = "manadatory" })
+                </td>
+                <td class="col-md-3" style="padding:10px !important;">
+                    @Html.DropDownListFor(x => x.ProjectId, new SelectList(" "), "--Select Project--", new { @class = "form-control", @id = "ddlProject" })
+                    @Html.ValidationMessageFor(a => a.ProjectId)
+                </td>
+                <td class="col-md-2" style="padding:10px !important;">
+                    @Html.LabelFor(model => model.Modules, new { @class = "manadatory" })
+                </td>
+                <td class="col-md-3" style="padding:10px !important;">
+                    @Html.DropDownListFor(x => x.ModuleId, new SelectList(" "), "--Select Module--", new { @class = "form-control", @id = "ddlModule" })
+                    @Html.ValidationMessageFor(a => a.ModuleId)
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-2" style="padding:10px !important;">
+                    @Html.LabelFor(model => model.TaskName, new { @class = "manadatory" })
+                </td>
+                <td class="col-md-3" style="padding:10px !important;">
+                    @Html.TextBoxFor(model => model.TaskName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TaskName, "", new { @class = "text-danger" })
+                </td>
+                <td class="col-md-2" style="padding:10px !important;">
+                    @Html.LabelFor(model => model.PlannedEfforts, new { @class = "manadatory" })
+                </td>
+                <td class="col-md-3" style="padding:15px !important;">
+                    @Html.TextBoxFor(model => model.PlannedEfforts, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PlannedEfforts, "", new { @class = "text-danger" })
+                </td>
+            </tr>
 
-    <tr>
-        <td class="col-md-2" style="padding:10px !important;">
-            @Html.LabelFor(model => model.PlannedStartDate, new { @class = "manadatory" })
-        </td>
-        <td class="col-md-3" style="padding:10px !important;">
-            @Html.TextBoxFor(model => model.PlannedStartDate, new { @class = "form-control", @onkeypress = "return false;" })
-            @Html.ValidationMessageFor(model => model.PlannedStartDate, "", new { @class = "text-danger" })
-        </td>
-        <td class="col-md-2" style="padding:10px !important;">
-            @Html.LabelFor(model => model.PlannedEndDate, new { @class = "manadatory" })
-        </td>
-        <td class="col-md-3" style="padding:10px !important;">
-            @Html.TextBoxFor(model => model.PlannedEndDate, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.PlannedEndDate, "", new { @class = "text-danger" })
-        </td>
-    </tr>
-
-    <tr>
-        <td class="col-md-2" style="padding:10px !important;">
-            @Html.LabelFor(model => model.PlannedEfforts, new { @class = "manadatory" })
-        </td>
-        <td class="col-md-3" style="padding:15px !important;">
-            @Html.TextBoxFor(model => model.PlannedEfforts, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.PlannedEfforts, "", new { @class = "text-danger" })
-        </td>
-        <td colspan="2">
-        </td>
-    </tr>
-</table> }
+            <tr>
+                <td class="col-md-2" style="padding:10px !important;">
+                    @Html.LabelFor(model => model.PlannedStartDate, new { @class = "manadatory" })
+                </td>
+                <td class="col-md-3" style="padding:10px !important;">
+                    @Html.TextBoxFor(model => model.PlannedStartDate, new { @class = "form-control", @onkeypress = "return false;" })
+                    @Html.ValidationMessageFor(model => model.PlannedStartDate, "", new { @class = "text-danger" })
+                </td>
+                <td class="col-md-2" style="padding:10px !important;">
+                    @Html.LabelFor(model => model.PlannedEndDate, new { @class = "manadatory" })
+                </td>
+                <td class="col-md-3" style="padding:10px !important;">
+                    @Html.TextBoxFor(model => model.PlannedEndDate, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PlannedEndDate, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-2" style="padding:10px !important;">
+                    @Html.LabelFor(model => model.Description, new { @class = "manadatory" })
+                </td>
+                <td class="col-md-3" colspan="4" style="padding:10px !important;">
+                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+        </table> }
 <br />
                 <div class="row">
                     <div class="form-group">
